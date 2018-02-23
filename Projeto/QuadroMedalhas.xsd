@@ -1,0 +1,66 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="jogosOlimpicos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="pais" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:positiveInteger" name="ranking"/>
+              <xs:element type="xs:string" name="abreviatura"/>
+              <xs:element type="xs:nonNegativeInteger" name="medalhasOuro"/>
+              <xs:element type="xs:nonNegativeInteger" name="medalhasPrata"/>
+              <xs:element type="xs:nonNegativeInteger" name="medalhasBronze"/>
+              <xs:element type="xs:nonNegativeInteger" name="totalMedalhas"/>
+              <xs:element name="ouro">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="atleta" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="modalidade"/>
+                          <xs:element type="xs:string" name="categoria"/>
+                          <xs:element type="xs:string" name="nome"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="prata">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="atleta" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="modalidade"/>
+                          <xs:element type="xs:string" name="categoria"/>
+                          <xs:element type="xs:string" name="nome"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="bronze">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="atleta" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="modalidade"/>
+                          <xs:element type="xs:string" name="categoria"/>
+                          <xs:element type="xs:string" name="nome"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="nome" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
